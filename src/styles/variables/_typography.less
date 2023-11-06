@@ -1,0 +1,44 @@
+// Font variables
+@font-size__base: 14px;
+
+@font-size__xxl: ceil(1.42 * @font-size__base); // 20px
+@font-size__xl: ceil(1.28 * @font-size__base); // 18px
+@font-size__l: ceil(1.14 * @font-size__base); // 16px
+@font-size__m: @font-size__base; // 14px
+@font-size__s: ceil(.85 * @font-size__base); // 12px
+@font-size__xs: floor(.75 * @font-size__base); // 11px
+@font-size__xxs: floor(.71429 * @font-size__base); // 10px
+
+// Weights
+@font-weight__light: 300;
+@font-weight__regular: 400;
+@font-weight__heavier: 500;
+@font-weight__semibold: 600;
+@font-weight__bold: 700;
+
+// Headings
+@heading__font-weight__base: @font-weight__bold;
+
+@h1__font-size: ceil((@font-size__base * 3.42)); // 48px
+
+@h2__font-size: ceil((@font-size__base * 2.85)); // 40px
+
+@h3__font-size: ceil((@font-size__base * 2.28)); // 32px
+@h3__font-weight: @heading__font-weight__base;
+
+@h4__font-size: ceil((@font-size__base * 1.71)); // 24px
+
+@h5__font-size: ceil((@font-size__base * 1.42)); // 20px
+
+@h6__font-size: ceil((@font-size__base * 1.28)); // 18px
+@h6__font-weight: @font-weight__heavier;
+
+@page-title-custom__font-size: 20px;
+@page-title-custom__font-weight: @font-weight__semibold;
+@page-title-custom__line-height: 24px;
+@page-title-custom__text-transformation: uppercase;
+
+// Typography
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,800;1,500;1,600;1,700&display=swap');
+
+@raleway: 'Raleway', sans-serif;
