@@ -30,11 +30,9 @@
                             "src/assets"
                         ],
                         "styles": [
-                            
                             "src/styles.less"
                         ],
-                        "scripts": [
-                        ]
+                        "scripts": []
                     },
                     "configurations": {
                         "production": {
@@ -58,13 +56,23 @@
                             "vendorChunk": true,
                             "extractLicenses": false,
                             "sourceMap": true,
-                            "namedChunks": true
+                            "namedChunks": true,
+                            "fileReplacements": [
+                              {
+                                "replace": "src/environments/environment.ts",
+                                "with": "src/environments/environment.development.ts"
+                              }
+                            ]
                         }
                     },
                     "defaultConfiguration": "production"
                 },
                 "serve": {
                     "builder": "@angular-devkit/build-angular:dev-server",
+                    "options": {
+                        "browserTarget": "api-ceo:build",
+                        "proxyConfig": "proxy.conf.js"
+                    },
                     "configurations": {
                         "production": {
                             "browserTarget": "api-ceo:build:production"
