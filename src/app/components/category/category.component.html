@@ -1,15 +1,60 @@
-<table class="table table-striped table-bordered">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Nome</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let categoria of categorias">
-            <td>{{categoria.id}}</td>
-            <td>{{categoria.nome}}</td>
-        </tr>
-    </tbody>
-</table>
+<div class="category-box">
+    <div class="container">
+        <div class="row gy-5">
+            <div class="col">
+                <h2>Categoria</h2>
+            </div>
+            <div class="col">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                    data-bs-whatever="@mdo">Adicionar nova Categoria</button>
 
+            </div>
+        </div>
+
+
+        <div class="row">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let categoria of categorias">
+                        <td>{{categoria.id}}</td>
+                        <td>{{categoria.nome}}</td>
+                        <td><button (click)="excluirCategoria(categoria.id)">Excluir Categoria</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Adicione uma nova Categoria</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Nome:</label>
+                            <input type="text" class="form-control" id="recipient-name" #nameCategory>
+
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="criarCategoria()">Criar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,7 @@
+{
+    "/api": {
+      "target": "http://20.88.41.42",
+      "secure": false,
+      "logLevel": "debug"
+    }
+  }
